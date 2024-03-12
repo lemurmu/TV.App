@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="TV.App.UserControls.TimeSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TV.App.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="timeSetting"
+    MinWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibleConvert" />
+    </UserControl.Resources>
+    <Grid>
+        <Border Margin="0,5" Padding="20" CornerRadius="5">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="#2e3967" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5f76f6" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Grid>
+                <TextBlock Margin="10,0,0,2" VerticalAlignment="Center" FontSize="24" FontWeight="Light" Foreground="#fcf9f4" Text="{Binding ElementName=timeSetting, Path=Title}" />
+                <CheckBox IsChecked="{Binding ElementName=timeSetting, Path=IsChecked}" Style="{StaticResource ToggleButtonStyle}" Visibility="{Binding ElementName=timeSetting, Path=HasToggle, Converter={StaticResource BoolToVisibleConvert}}" />
+                <TextBlock
+                    Margin="0,0,10,2"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    FontWeight="Light"
+                    Foreground="#fcf9f4"
+                    Text="{Binding ElementName=timeSetting, Path=Text}"
+                    Visibility="{Binding ElementName=timeSetting, Path=HasText, Converter={StaticResource BoolToVisibleConvert}}" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

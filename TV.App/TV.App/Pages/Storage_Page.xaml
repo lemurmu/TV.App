@@ -1,0 +1,60 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:Class="TV.App.Pages.Storage_Page"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TV.App.Pages"
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:TV.App.UserControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    mc:Ignorable="d">
+    <Border
+        MinHeight="400"
+        MaxWidth="800"
+        Margin="50,0"
+        Padding="20,30"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Center"
+        Background="#374270"
+        CornerRadius="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock Margin="20,20,0,40" FontSize="24" Foreground="White" Text="Total Size : 9.6 GB" />
+
+                <lvc:PieChart Height="200" InnerRadius="110" LegendLocation="None">
+                    <lvc:PieChart.Series>
+                        <lvc:PieSeries Fill="#75c45a" StrokeThickness="0" Values="840" />
+                        <lvc:PieSeries Fill="#21c1d9" StrokeThickness="0" Values="205" />
+                        <lvc:PieSeries Fill="#5788ee" StrokeThickness="0" Values="309" />
+                        <lvc:PieSeries Fill="#f7e68a" StrokeThickness="0" Values="982" />
+                        <lvc:PieSeries Fill="#fcaa2c" StrokeThickness="0" Values="100" />
+                        <lvc:PieSeries Fill="#f95f15" StrokeThickness="0" Values="300" />
+                        <lvc:PieSeries Fill="#dbdeed" StrokeThickness="0" Values="1200" />
+                    </lvc:PieChart.Series>
+                </lvc:PieChart>
+            </StackPanel>
+
+            <TextBlock Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White" Text="Used : 3.7GB" />
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <uc:StorageDesc Title="System : 845 MB" Color="#75c45a" />
+                <uc:StorageDesc Title="Photo : 205 MB" Color="#21c1d9" />
+                <uc:StorageDesc Title="Music : 100 MB" Color="#5788ee" />
+                <uc:StorageDesc Title="Application : 500 MB" Color="#f7e68a" />
+                <uc:StorageDesc Title="Video : 480 MB" Color="#fcaa2c" />
+                <uc:StorageDesc Title="Other : 140 MB" Color="#f95f15" />
+                <uc:StorageDesc Title="Availible Size: 980 MB" Color="#dbdeed" />
+            </StackPanel>
+
+
+
+        </Grid>
+    </Border>
+</UserControl>

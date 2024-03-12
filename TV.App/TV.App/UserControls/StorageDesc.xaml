@@ -1,0 +1,13 @@
+﻿<UserControl
+    x:Name="storageDescCtr"
+    x:Class="TV.App.UserControls.StorageDesc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TV.App.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <StackPanel Margin="0,10" Orientation="Horizontal">
+        <Border Width="20" Height="20" Margin="0,0,10,0" Background="{Binding ElementName=storageDescCtr, Path=Color}" CornerRadius="5" />
+        <TextBlock FontSize="18" Foreground="White" Text="{Binding ElementName=storageDescCtr,Path=Title}"/>
+    </StackPanel>
+</UserControl>

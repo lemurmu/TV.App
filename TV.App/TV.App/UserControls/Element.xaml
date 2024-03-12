@@ -1,0 +1,57 @@
+﻿<UserControl
+    Name="element"
+    x:Class="TV.App.UserControls.Element"
+    xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TV.App.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Button Width="230" Margin="15,0" Padding="20" Click="Button_Click" FocusVisualStyle="{x:Null}">
+        <Button.Style>
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="300" />
+                <Setter Property="Foreground" Value="#e2e2e4" />
+
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                            <GradientStop Color="#464f78" />
+                            <GradientStop Offset="0.9" Color="#323f6c" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#5f76f6" />
+                        <Setter Property="Foreground" Value="#ffffff" />
+                        <Setter Property="Height" Value="330" />
+                    </Trigger>
+
+                    <DataTrigger Binding="{Binding ElementName=element, Path=IsActive}" Value="True">
+                        <Setter Property="Background" Value="#5f76f6" />
+                        <Setter Property="Foreground" Value="#ffffff" />
+                        <Setter Property="Height" Value="330" />
+                    </DataTrigger>
+
+                </Style.Triggers>
+            </Style>
+        </Button.Style>
+
+        <StackPanel VerticalAlignment="Center">
+            <Icon:PackIconMaterial Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Kind="{Binding ElementName=element, Path=Icon}" />
+            <TextBlock Margin="0,30,0,0" FontSize="18" FontWeight="SemiBold" Text="{Binding ElementName=element, Path=Title}" TextAlignment="Center" />
+        </StackPanel>
+    </Button>
+</UserControl>

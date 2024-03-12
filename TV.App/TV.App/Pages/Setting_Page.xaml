@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="TV.App.Pages.Setting_Page"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TV.App.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:TV.App.UserControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Grid x:Name="grid" Margin="20">
+        <ScrollViewer Width="{Binding ElementName=grid, Path=ActualWidth}" Padding="0,20" VerticalAlignment="Center" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <uc:Element Title="Network Setting" ElementClick="Element_ElementClick" Icon="Wifi" />
+                <uc:Element Title="Time Setting" ElementClick="Element_ElementClick1" Icon="Timelapse" />
+                <uc:Element Title="Common" ElementClick="Element_ElementClick2" Icon="Layers" />
+                <uc:Element Title="About Us" ElementClick="Element_ElementClick3" Icon="Information" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
